@@ -9,6 +9,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { SolanaWallet } from "@/components/SolanaWallet";
+import { EtherWallet } from "@/components/EtherWallet";
 
 export default function Home() {
   const [mnemonic, setMnemonic] = useState<string[] | null>(null);
@@ -46,6 +47,7 @@ export default function Home() {
           </AccordionItem>
         </Accordion>
         <SolanaWallet mnemonic={mnemonic} />
+        <EtherWallet mnemonic={mnemonic} />
       </div>
     </main>
   );

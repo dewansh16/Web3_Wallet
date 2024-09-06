@@ -3,6 +3,7 @@ import { mnemonicToSeed } from "bip39";
 import { derivePath } from "ed25519-hd-key";
 import { Keypair, PublicKeyData } from "@solana/web3.js";
 import nacl from "tweetnacl";
+import { Button } from "./ui/button";
 
 interface SolanaWalletProps {
   mnemonic: null | string[];
@@ -25,7 +26,9 @@ export function SolanaWallet({ mnemonic }: SolanaWalletProps) {
 
   return (
     <div>
-      <button onClick={createWallet}>Add wallet</button>
+      <Button className="my-2" onClick={createWallet}>
+        Add solana wallet
+      </Button>
       {publicKeys.map((p, ind) => (
         <div key={ind}>{p}</div>
       ))}
